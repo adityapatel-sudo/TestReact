@@ -13,6 +13,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import TabThreeScreen from "../screens/TabThreeScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -75,4 +76,18 @@ function TabTwoNavigator() {
       />
     </TabTwoStack.Navigator>
   );
+}
+
+const TabThreeStack = createStackNavigator<TabTwoParamList>();
+
+function TabThreeNavigator() {
+    return (
+        <TabThreeStack.Navigator>
+            <TabThreeStack.Screen
+                name="TabThreeScreen"
+                component={TabThreeScreen}
+                options={{ headerTitle: 'Tab Three Title' }}
+            />
+        </TabThreeStack.Navigator>
+    );
 }
